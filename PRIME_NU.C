@@ -1,40 +1,27 @@
 #include<stdio.h>
 #include<conio.h>
-#include<math.h>
 
 void main()
 {
-	int i,n,IsPrime=1;
+	int i,n,count,j;
 	clrscr();
 	printf("\nEnter n:");
 	scanf("%d",&n);
-	printf("\nPrime Number\n");
 
-	if(n<1)
-	{
-		IsPrime=0;
-	}
-	else
-	{
-		for(i=2;i<=sqrt(n);i++)
+		for(i=2;i<=n;i++)
 		{
-			if(n%i==0)
+			count=0;
+			for(j=1;j<=i;j++)
 			{
-
-				IsPrime=0;
-				break;
+				if(i%j==0)
+				{
+					count++;
+				}
+			}
+			if(count==2)
+			{
+				printf("\nPrime number:%d",i);
 			}
 		}
-	}
-	if(IsPrime)
-	{
-		printf("\n%d is Prime Number",n);
-	}
-	else
-	{
-		printf("\n%d is not Prime Number",n);
-	}
-
-
 	getch();
 }
